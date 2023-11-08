@@ -7,3 +7,5 @@ Este é o projeto em que eu vou realizar todos os  exercícios de python do site
 Além disso, o versionamento será guiado por versões, em que acada nova Major Version significa que um novo exercício foi iniciado. Dessa forma, mesmo que isso não esteja relacionado com a compatibilidade do programa, acredito ser um bom teste para me adaptar as tags.
 
 # Exercícios
+## currency-exchange -- 1.3
+Exercício básico sobre a lógica e as operações básicas da matemática.
