@@ -63,8 +63,23 @@ def higher_card(card_one, card_two):
     2.  'A' (ace card) = 1
     3.  '2' - '10' = numerical value.
     """
-
-    
+    # Calculando o valor da carta 1
+    ValueCardOne = value_of_card(card_one)
+    # Calculando o valor da carta 2
+    ValueCardTwo = value_of_card(card_two)
+    # verificando se a carta 1 é maior do que a segunda
+    if ValueCardOne > ValueCardTwo:
+        # retornando o valor da carta 1, se esse for o caso
+        return card_one
+    # caso não seja, verificando se a carta doi é maior do que a primeira com
+    # um if em vez de elif. Já que, se a comparação a cima for verdadeira o
+    # programa não vai executar essa função de qualquer forma
+    if ValueCardOne < ValueCardTwo:
+        # caso a segunda carta seja maior retornamos ela
+        return card_two
+    # e caso as duas comparações anteriores sejam falsas, sabemos que elas tem
+    # o mesmo valor e basta retornar os dois
+    return  card_one, card_two
 
 
 def value_of_ace(card_one, card_two):
