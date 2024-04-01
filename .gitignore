@@ -2,6 +2,7 @@
 /exercism-venv/
 */.pytest_cache
 **/__pycache__/
+**/__pycache__
 **/.exercism
 **/HELP.md
 **/HINTS.md

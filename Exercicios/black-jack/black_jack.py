@@ -25,11 +25,13 @@ def value_of_card(card):
         # caso ela seja a carta de um número
         CardValue = int(card)
     # E então, se falharmos, tentamos ver se é um rei, uma rainha,
-    # um ace ou um valete  
+    # um ace ou um valete
     except:
-        # Fazemos a entrada ficar em maiuscula para não ser case sensitive
+        # Fazemos a entrada ficar em maiuscula para não ser case
+        # sensitive
         card = card.upper()
-        # verificamos se é um ace separadamente, visto que ele tem um valor diferente
+        # verificamos se é um ace separadamente, visto que ele tem um
+        # valor diferente
         if card == "A":
             # e, se sim, daclaramos que ele vale um retornando a função
             return 1
@@ -37,7 +39,8 @@ def value_of_card(card):
         elif card == "J" or card == "Q" or card == "K":
             # e, se assim for, retornamos a função dizando que a carta vale 10
             return 10
-        # e caso não seja nenhuma dessas outras declaramos que ou um erro na entrada
+        # e caso não seja nenhuma dessas outras declaramos que ou
+        # um erro na entrada
         else:
             raise ValueError("A função aceita apenas numeros, em formato" +
                              "de stirng, ou as letras: A, J, Q ou K")
@@ -56,8 +59,10 @@ def value_of_card(card):
 def higher_card(card_one, card_two):
     """Determine which card has a higher value in the hand.
 
-    :param card_one, card_two: str - cards dealt in hand.  See below for values.
-    :return: str or tuple - resulting Tuple contains both cards if they are of equal value.
+    :param card_one, card_two: str - cards dealt in hand. 
+        See below for values.
+    :return: str or tuple - resulting Tuple contains both cards if they
+        are of equal value.
 
     1.  'J', 'Q', or 'K' (otherwise known as "face cards") = 10
     2.  'A' (ace card) = 1
@@ -79,7 +84,7 @@ def higher_card(card_one, card_two):
         return card_two
     # e caso as duas comparações anteriores sejam falsas, sabemos que elas tem
     # o mesmo valor e basta retornar os dois
-    return  card_one, card_two
+    return card_one, card_two
 
 
 def value_of_ace(card_one, card_two):
@@ -92,8 +97,15 @@ def value_of_ace(card_one, card_two):
     2.  'A' (ace card) = 11 (if already in hand)
     3.  '2' - '10' = numerical value.
     """
-
-    pass
+    # Verificando se uma das duas cartas do jogador é um As
+    if card_one == "A" or card_two == "A":
+        return 1
+    # Se a soma das duas cartas vale mais de 10 pontos
+    if value_of_card(card_one) + value_of_card(card_two) > 10:
+        return 1
+    # E caso nenhuma das possibilidades anteriores
+    # ocorram, devolvo o valor maximo
+    return 11
 
 
 def is_blackjack(card_one, card_two):
@@ -114,7 +126,8 @@ def can_split_pairs(card_one, card_two):
     """Determine if a player can split their hand into two hands.
 
     :param card_one, card_two: str - cards dealt.
-    :return: bool - can the hand be split into two pairs? (i.e. cards are of the same value).
+    :return: bool - can the hand be split into two pairs?
+        (i.e. cards are of the same value).
     """
 
     pass
@@ -124,7 +137,8 @@ def can_double_down(card_one, card_two):
     """Determine if a blackjack player can place a double down bet.
 
     :param card_one, card_two: str - first and second cards in hand.
-    :return: bool - can the hand can be doubled down? (i.e. totals 9, 10 or 11 points).
+    :return: bool - can the hand can be doubled down?
+        (i.e. totals 9, 10 or 11 points).
     """
 
     pass
