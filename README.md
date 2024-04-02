@@ -45,3 +45,6 @@ return temperature < 800 and neutrons_emitted > 500 and temperature*neutrons_emi
     # retornando o valor encontrado   
     return flag 
 ```
+## BlackJack 3.4.1
+
+Exercício simples, embora tenha tido um pouco de dificuldade de entender o que estava sendo solicitado em cada função. Além disso, fora a minha dificuldade de compreenção, foi fácil resolve-lo e, também, aprendi sobre as estruturas try e except para o tratamento de erros (mesmo que não fosse nescessário para resolver o exercício).
