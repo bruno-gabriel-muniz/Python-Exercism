@@ -99,6 +99,8 @@ def value_of_ace(card_one, card_two):
     """
     # Verificando se uma das duas cartas do jogador é um As
     if card_one == "A" or card_two == "A":
+        # E se for consideramos que os As na mão vale 11
+        # Logo o próximo As deve valer 1
         return 1
     # Se a soma das duas cartas vale mais de 10 pontos
     if value_of_card(card_one) + value_of_card(card_two) > 10:
@@ -118,8 +120,14 @@ def is_blackjack(card_one, card_two):
     2.  'A' (ace card) = 11 (if already in hand)
     3.  '2' - '10' = numerical value.
     """
-
-    pass
+    # Verificamos se o Blackjack ocorreu
+    if ((card_one == 'A' or card_two == 'A') and
+            (value_of_card(card_one) == 10 or
+             value_of_card(card_two) == 10)):
+        # Se sim retornamos True
+        return True
+    # Caso contrário retornamos False
+    return False
 
 
 def can_split_pairs(card_one, card_two):
@@ -129,8 +137,12 @@ def can_split_pairs(card_one, card_two):
     :return: bool - can the hand be split into two pairs?
         (i.e. cards are of the same value).
     """
-
-    pass
+    # Verificamos se os valores das cartas são iguais
+    if value_of_card(card_one) == value_of_card(card_two):
+        # Caso sejam retornamos True
+        return True
+    # Se não retornamos False
+    return False
 
 
 def can_double_down(card_one, card_two):
@@ -140,5 +152,9 @@ def can_double_down(card_one, card_two):
     :return: bool - can the hand can be doubled down?
         (i.e. totals 9, 10 or 11 points).
     """
-
-    pass
+    # Verificamos se os valores das cartas estão entre 9 e 11
+    if 11 >= value_of_card(card_one) + value_of_card(card_two) >= 9:
+        #  Caso estejam retornamos True
+        return True
+    # Caso contrário retornamos false
+    return False
